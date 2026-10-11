@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kuke People Research</title>
+<style>
+  /* Basic Page Setup */
+  body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f9; }
+
+  /* Top Navigation Bar */
+  .topnav { background-color: #333; overflow: hidden; }
+  .topnav a { float: left; color: #f2f2f2; text-align: center; padding: 14px 20px; text-decoration: none; font-size: 17px; transition: 0.3s; }
+  .topnav a:hover { background-color: #ddd; color: black; }
+  .topnav a.active { background-color: #4a90e2; color: white; }
+
+  /* Main Layout Container */
+  .main-container { max-width: 1200px; margin: 20px auto; padding: 0 20px; }
+
+  /* Middle Section: Bulletin & Map */
+  .middle-section { display: flex; gap: 30px; margin-bottom: 40px; }
+  
+  .bulletin { 
+    flex: 1; /* Takes up 1 part of the width */
+    background-color: #fff; 
+    padding: 20px; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+  }
+  
+  .map-container { 
+    flex: 2; /* Takes up 2 parts of the width, making the map wider */
+    background-color: #e0e0e0; 
+    border-radius: 8px; 
+    overflow: hidden; 
+    min-height: 350px; 
+  }
+  .map-container iframe { width: 100%; height: 100%; border: none; }
+
+  /* Bottom Section: 4 Flip Boxes */
+  .boxes-section { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+
+  /* Flip Box Animation & Styling */
+  .flip-box { background-color: transparent; height: 250px; perspective: 1000px; cursor: pointer; }
+  .flip-box-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s; transform-style: preserve-3d; }
+  
+  /* Triggered by the onclick event to flip */
+  .flip-box.is-flipped .flip-box-inner { transform: rotateY(180deg); }
+
+  .flip-box-front, .flip-box-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+  
+  /* Front Image Styling */
+  .flip-box-front img { width: 100%; height: 100%; object-fit: cover; }
+  
+  /* Back Content Styling */
+  .flip-box-back { background-color: #4a90e2; color: white; transform: rotateY(180deg); display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 15px; box-sizing: border-box; }
+  .flip-box-back a { color: #fff; text-decoration: underline; margin-top: 10px; font-weight: bold; }
+  
+  /* Make it responsive for smaller screens */
+  @media (max-width: 768px) {
+    .middle-section { flex-direction: column; }
+    .boxes-section { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- 1. TOP NAVIGATION BAR -->
+<div class="topnav">
+  <a class="active" href="#home">Home</a>
+  <a href="#about">About Kuke</a>
+  <a href="#fieldwork">Fieldwork</a>
+  <a href="#gallery">Gallery</a>
+</div>
+
+<div class="main-container">
+  
+  <!-- 2. MIDDLE SECTION: Fast Facts & Map -->
+  <div class="middle-section">
+    
+    <!-- Fast Fact Bulletin -->
+    <div class="bulletin">
+      <h3>Fast Facts</h3>
+      <p>Insert the introductory demographics and summary bullet points from your webpage for kuke file right here.</p>
+    </div>
+    
+    <!-- Interactive Map -->
+    <div class="map-container">
+      <!-- To update this map: Go to Google Maps, search the specific region in Nepal, click "Share", select "Embed a map", and paste the resulting iframe code here. -->
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.81!2d85.31!3d27.71!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19!2sKathmandu%2C%20Nepal!5e0!3m2!1sen!2sau!4v1690000000000!5m2!1sen!2sau" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+  </div>
+
+  <!-- 3. BOTTOM SECTION: 4 Click-to-Flip Boxes -->
+  <div class="boxes-section">
+    
+    <!-- Box 1 -->
+    <div class="flip-box" onclick="this.classList.toggle('is-flipped')">
+      <div class="flip-box-inner">
+        <div class="flip-box-front">
+          <img src="images/nepal1.jpg" alt="Fieldwork Image 1">
+        </div>
+        <div class="flip-box-back">
+          <h4>Methodology</h4>
+          <p>Text outlining the field research approach.</p>
+          <a href="#">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Box 2 -->
+    <div class="flip-box" onclick="this.classList.toggle('is-flipped')">
+      <div class="flip-box-inner">
+        <div class="flip-box-front">
+          <img src="images/nepal2.jpg" alt="Fieldwork Image 2">
+        </div>
+        <div class="flip-box-back">
+          <h4>Language</h4>
+          <p>Details on linguistic structures.</p>
+          <a href="#">View Glossary</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Box 3 -->
+    <div class="flip-box" onclick="this.classList.toggle('is-flipped')">
+      <div class="flip-box-inner">
+        <div class="flip-box-front">
+          <img src="images/nepal3.jpg" alt="Fieldwork Image 3">
+        </div>
+        <div class="flip-box-back">
+          <h4>Daily Life</h4>
+          <p>Notes on routine and cultural practices.</p>
+          <a href="#">See Notes</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Box 4 -->
+    <div class="flip-box" onclick="this.classList.toggle('is-flipped')">
+      <div class="flip-box-inner">
+        <div class="flip-box-front">
+          <img src="images/nepal4.jpg" alt="Fieldwork Image 4">
+        </div>
+        <div class="flip-box-back">
+          <h4>Media Gallery</h4>
+          <p>Watch interviews and field footage.</p>
+          <a href="https://youtube.com/your-video-link" target="_blank">Watch Video</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

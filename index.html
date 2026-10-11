@@ -27,6 +27,41 @@
     border-radius: 8px; 
     box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
   }
+  /* ---------- Fast Facts: color-bar layout ---------- */
+.bulletin h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.fact-header {
+  color: white;
+  font-weight: bold;
+  padding: 10px 15px;
+  font-size: 15px;
+}
+
+.fact-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  background-color: #e6e6e6;
+  padding: 12px 15px;
+  font-size: 14px;
+  border-bottom: 1px solid #d0d0d0;
+}
+
+.fact-row:last-child {
+  border-bottom: none;
+}
+
+.fact-group {
+  margin-bottom: 15px;
+}
+
+/* Color themes */
+.header-blue   { background-color: #2c5d99; }
+.header-orange { background-color: #e8833a; }
+.header-green  { background-color: #1a8a7a; }
   
   .map-container { 
     flex: 2; /* Takes up 2 parts of the width, making the map wider */
@@ -99,17 +134,40 @@
     
     <!-- Fast Fact Bulletin -->
     <div class="bulletin">
-      <h3>Fast Facts</h3>
-      <p>
-        Kuke (ght) is part of the Sino-Tibetan family and Sino-Tibetan, Tibeto-Burman, Western Tibeto-Burman, Bodish, West Bodish, Ghale class.<br>
-        Population <br>
-        There are approximately 2,000 Kutang Bhotia individuals living in Nepal.<br>
-        Language <br>
-        They speak Kuke (also classified under the Sino-Tibetan language family), which reflects their distinct trans-Himalayan cultural heritage.<br>
-        Religion <br>
-        Their primary religion is Tibetan Buddhism. <br>
-      </p>
+  <h3>Fast Facts</h3>
+
+  <!-- Language -->
+  <div class="fact-group">
+    <div class="fact-header header-blue">Language:</div>
+    <div class="fact-row">
+      <span>Classification</span>
+      <span>Sino-Tibetan, Tibeto-Burman, Bodish, Ghale</span>
     </div>
+    <div class="fact-row">
+      <span>Language</span>
+      <span>Kuke (ght)</span>
+    </div>
+  </div>
+
+  <!-- Population -->
+  <div class="fact-group">
+    <div class="fact-header header-orange">Population:</div>
+    <div class="fact-row">
+      <span>Kutang Bhotia in Nepal</span>
+      <span>≈ 2,000</span>
+    </div>
+  </div>
+
+  <!-- Religion -->
+  <div class="fact-group">
+    <div class="fact-header header-green">Religion:</div>
+    <div class="fact-row">
+      <span>Primary religion</span>
+      <span>Tibetan Buddhism</span>
+    </div>
+  </div>
+
+</div>
     
     <!-- Interactive Map -->
     <div class="map-container">
